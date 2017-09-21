@@ -28,11 +28,6 @@ To install mimesis, simply:
 ➜  ~ pip install mimesis
 ```
 
-Also you can install it manually:
-```zsh
-(env) ➜  python3 setup.py install
-```
-
 ## Basic Usage
 
 As we said above, this library is really easy to use:
