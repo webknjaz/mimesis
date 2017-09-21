@@ -79,49 +79,7 @@ You can specify a locale when creating providers and they will return data that 
 'Rósa Þórlindsdóttir'
 ```
 
-Mimesis currently includes support for 33 different locales. See details for more information.
-
-<details>
-<!-- toc -->
-
-| №  | Flag  | Code       | Name                 | Native name |
-|--- |---   |---       |---                 |---         |
-| 1  | 🇨🇿   |  `cs`      | Czech                | Česky       |
-| 2  | 🇩🇰   |  `da`      | Danish               | Dansk       |
-| 3  | 🇩🇪   |  `de`      | German               | Deutsch     |
-| 4  | 🇦🇹   |  `de-at`   | Austrian German      | Deutsch     |
-| 5  | 🇨🇭   |  `de-ch`   | Swiss German         | Deutsch     |
-| 6  | 🇬🇷   |  `el`      | Greek                | Ελληνικά    |
-| 7  | 🇺🇸   |  `en`      | English              | English     |
-| 8  | 🇦🇺   |  `en-au`   | Australian English   | English     |
-| 9  | 🇨🇦   |  `en-ca`   | Canadian English     | English     |
-| 10 | 🇬🇧   |  `en-gb`   | British English      | English     |
-| 11 | 🇪🇸   |  `es`      | Spanish              | Español     |
-| 12 | 🇲🇽   |  `es-mx`   | Mexican Spanish      | Español     |
-| 13 | 🇪🇪   |  `et`      | Estonian             | Eesti       |
-| 14 | 🇮🇷   |  `fa`      | Farsi                | فارسی       |
-| 15 | 🇫🇮   |  `fi`      | Finnish              | Suomi       |
-| 16 | 🇫🇷   |  `fr`      | French               | Français    |
-| 17 | 🇭🇺   |  `hu`      | Hungarian            | Magyar      |
-| 18 | 🇮🇸   |  `is`      | Icelandic            | Íslenska    |
-| 19 | 🇮🇹   |  `it`      | Italian              | Italiano    |
-| 20 | 🇯🇵   |  `ja`      | Japanese             | 日本語       |
-| 21 | 🇰🇿   |  `kk`      | Kazakh               | Қазақша     |
-| 22 | 🇰🇷   |  `ko`      | Korean               | 한국어       |
-| 23 | 🇳🇱   |  `nl`      | Dutch                | Nederlands  |
-| 24 | 🇧🇪   |  `nl-be`   | Belgium Dutch        | Nederlands  |
-| 25 | 🇳🇴   |  `no`      | Norwegian            | Norsk       |
-| 26 | 🇵🇱   |  `pl`      | Polish               | Polski      |
-| 27 | 🇵🇹   |  `pt`      | Portuguese           | Português   |
-| 28 | 🇧🇷   |  `pt-br`   | Brazilian Portuguese | Português Brasileiro |
-| 29 | 🇷🇺   |  `ru`      | Russian              | Русский     |
-| 30 | 🇸🇪   |  `sv`      | Swedish              | Svenska     |
-| 31 | 🇹🇷   |  `tr`      | Turkish              | Türkçe      |
-| 32 | 🇺🇦   |  `uk`      | Ukrainian            | Український |
-| 33 | 🇨🇳   |  `zh`      | Chinese              | 汉语         |
-
-<!-- tocstop -->
-</details>
+Mimesis currently includes support for 33 different locales. Table of locales located [here](https://github.com/lk-geimfari/mimesis/blob/gh-pages/SUPPORTED_LOCALES.md).
 
 <br>
 
@@ -139,37 +97,7 @@ When you only need to generate data for a single locale, use the `Generic()` pro
 ```
 
 ## Data providers
-Mimesis support over twenty different data providers available, which can produce data related to food, people, computer hardware, transportation, addresses, and more. See details for more information.
-
-<details>
-<!-- toc -->
-
-| №   | Provider        | Description                                                    |
-|---  | ------------- |:-------------                                                    |
-| 1   | Address         | *Address data (street name, street suffix etc.)*               |
-| 2   | Business        | *Business data (company, company_type, copyright etc.)*        |
-| 3   | Code            | *Codes (ISBN, EAN, IMEI etc.).*                                |
-| 4   | ClothingSizes   | *Clothing sizes (international sizes, european etc.)*          |
-| 5   | Datetime        | *Datetime (day_of_week, month, year etc.)*                     |
-| 6   | Development     | *Data for developers (version, programming language etc.)*     |
-| 7   | File            | *File data (extension etc.)*                                   |
-| 8   | Food            | *Information on food (vegetables, fruits, measurements etc.)*  |
-| 9   | Games           | *Games data (game, score, pegi_rating etc.)*                   |
-| 10  | Personal        | *Personal data (name, surname, age, email etc.)*               |
-| 11  | Text            | *Text data (sentence, title etc.)*                             |
-| 12  | Transport       | *Dummy data about transport (truck model, car etc.)*           |
-| 13  | Science         | *Scientific data (scientist, math_formula etc.)*               |
-| 14  | Structured      | *Structured data (html, css etc.)*                             |
-| 15  | Internet        | *Internet data (facebook, twitter etc.)*                       |
-| 16  | Hardware        | *The data about the hardware (resolution, cpu, graphics etc.)* |
-| 17  | Numbers         | *Numerical data (floats, primes, digit etc.)*                  |
-| 18  | Path            | *Provides methods and property for generate paths.*            |
-| 19  | UnitSytem       | *Provides names of unit systems in international format*       |
-| 20  | Generic         | *All at once*                                                  |
-| 21  | Cryptographic   | *Cryptographic data*                                           |
-
-<!-- tocstop -->
-</details>
+Mimesis support over twenty different data providers available, which can produce data related to food, people, computer hardware, transportation, addresses, and more. [See details](https://github.com/lk-geimfari/mimesis/blob/gh-pages/SUPPORTED_PROVIDERS.md) for more information.
 
 ## Custom Providers
 You also can add custom provider to `Generic()`, using `add_provider()` method:
