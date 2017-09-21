@@ -11,9 +11,9 @@
 
 Mimesis offers a number of advantages over other similar libraries, such as Faker:
 
-* Performance. Mimesis is significantly [faster](http://i.imgur.com/pCo6yPA.png) than other similar libraries.
-* Completeness. Mimesis strives to provide many detailed providers that offer a variety of data generators.
-* Simplicity. Mimesis does not require any modules other than the Python standard library.
+* **Performance**. Mimesis is significantly [faster](http://i.imgur.com/pCo6yPA.png) than other similar libraries.
+* **Completeness**. Mimesis strives to provide many detailed providers that offer a variety of data generators in a variety of languages.
+* **Simplicity**. Mimesis does not require any modules other than the Python standard library.
 
 See [here](https://gist.github.com/lk-geimfari/461ce92fd32379d7b73c9e12164a9154) for an example of how we compare
 performance with other libraries.
