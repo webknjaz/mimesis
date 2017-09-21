@@ -1,14 +1,9 @@
-<a href="https://github.com/lk-geimfari/mimesis/">
-    <p align="center">
-      <img src="https://raw.githubusercontent.com/lk-geimfari/mimesis/master/media/logo.png">
-    </p>
-</a>
+![](https://raw.githubusercontent.com/lk-geimfari/mimesis/master/media/logo.png)
 
 **Mimesis** is a fast and easy to use library for Python programming language, which helps generate mock (dummy) data for a variety of purposes (see "[Data providers](#data-providers)") in a variety of languages (see "[Locales](#locales)"). This data can be particularly useful during software development and testing. The library was written with the use of tools from the standard Python library, and therefore, it does not have any side dependencies.
 
 [![Build Status](https://travis-ci.org/lk-geimfari/mimesis.svg?branch=master)](https://travis-ci.org/lk-geimfari/mimesis)
 [![Build status on Windows](https://ci.appveyor.com/api/projects/status/chj8huslvn6vde18?svg=true)](https://ci.appveyor.com/project/lk-geimfari/mimesis)
-[![codecov](https://codecov.io/gh/lk-geimfari/mimesis/branch/master/graph/badge.svg)](https://codecov.io/gh/lk-geimfari/mimesis)
 [![PyPI version](https://badge.fury.io/py/mimesis.svg)](https://badge.fury.io/py/mimesis)
 [![Python](https://img.shields.io/badge/python-3.3%5E-brightgreen.svg)](https://badge.fury.io/py/mimesis)
 
