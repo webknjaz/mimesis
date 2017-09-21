@@ -1,17 +1,30 @@
 <a href="https://github.com/lk-geimfari/mimesis/">
+    <p align="center">
       <img src="https://raw.githubusercontent.com/lk-geimfari/mimesis/master/media/logo.png">
+    </p>
 </a>
 
----
+**Mimesis** is a fast and easy to use library for Python programming language, which helps generate mock (dummy) data for a variety of purposes (see "[Data providers](#data-providers)") in a variety of languages (see "[Locales](#locales)"). This data can be particularly useful during software development and testing. The library was written with the use of tools from the standard Python library, and therefore, it does not have any side dependencies.
 
 [![Build Status](https://travis-ci.org/lk-geimfari/mimesis.svg?branch=master)](https://travis-ci.org/lk-geimfari/mimesis)
+[![Build status on Windows](https://ci.appveyor.com/api/projects/status/chj8huslvn6vde18?svg=true)](https://ci.appveyor.com/project/lk-geimfari/mimesis)
 [![codecov](https://codecov.io/gh/lk-geimfari/mimesis/branch/master/graph/badge.svg)](https://codecov.io/gh/lk-geimfari/mimesis)
 [![PyPI version](https://badge.fury.io/py/mimesis.svg)](https://badge.fury.io/py/mimesis)
+[![Python](https://img.shields.io/badge/python-3.3%5E-brightgreen.svg)](https://badge.fury.io/py/mimesis)
 
-**Mimesis** is a fast and easy to use library for Python, which helps generate mock data for a variety of purposes. This data can be particularly useful during software development and testing. For example, it could be used to populate a testing database for a web application (Django, Flask, etc.) with user information such as email addresses, usernames, first names, last names, etc. The library was written with the use of tools from the standard Python library, and therefore, it does not have any side dependencies. Currently the library supports 30 languages and 20 class providers, supplying various data.
+## Advantages
+
+Mimesis offers a number of advantages over other similar libraries, such as Faker:
+
+* Performance. Mimesis is significantly [faster](http://i.imgur.com/pCo6yPA.png) than other similar libraries.
+* Completeness. Mimesis strives to provide many detailed providers that offer a variety of data generators.
+* Simplicity. Mimesis does not require any modules other than the Python standard library.
+
+See [here](https://gist.github.com/lk-geimfari/461ce92fd32379d7b73c9e12164a9154) for an example of how we compare
+performance with other libraries.
 
 ## Documentation
-Mimesis is very simple to use, and the below examples should help you get started. Complete documentation for Mimesis is available [here](http://mimesis.readthedocs.io/).
+Mimesis is very simple to use, and the below examples should help you get started. Complete documentation for Mimesis is available on [Read the Docs](http://mimesis.readthedocs.io/).
 
 ## Installation
 To install mimesis, simply:
@@ -27,23 +40,46 @@ Also you can install it manually:
 
 ## Basic Usage
 
+As we said above, this library is really easy to use:
+
 ```python
->>> from mimesis import Personal
->>> person = Personal(locale='en')
+>>> import mimesis
+>>> person = mimesis.Personal(locale='en')
 
 >>> person.full_name(gender='female')
 'Antonetta Garrison'
 
->>> person.email(gender='male')
-'john7893@live.com'
-
 >>> person.occupation()
 'Backend Developer'
+
+>>> templates = ['U_d', 'U-d', 'l_d', 'l-d']
+>>> for template in templates:
+...     person.username(template=template)
+
+'Adders_1893'
+'Abdel-1888'
+'constructor_1884'
+'chegre-2051'
 ```
 
 ## Locales
 
-You can specify a locale when creating providers and they will return data that is appropriate for the language or country associated with that locale. Mimesis currently includes support for 30 different locales. See details for more information.
+You can specify a locale when creating providers and they will return data that is appropriate for the language or country associated with that locale:
+
+```python
+>>> from mimesis import Personal
+
+>>> de = Personal('de')
+>>> ic = Personal('is')
+
+>>> de.full_name()
+'Sabrina Gutermuth'
+
+>>> ic.full_name()
+'Rósa Þórlindsdóttir'
+```
+
+Mimesis currently includes support for 33 different locales. See details for more information.
 
 <details>
 <!-- toc -->
@@ -55,169 +91,109 @@ You can specify a locale when creating providers and they will return data that 
 | 3  | 🇩🇪   |  `de`      | German               | Deutsch     |
 | 4  | 🇦🇹   |  `de-at`   | Austrian German      | Deutsch     |
 | 5  | 🇨🇭   |  `de-ch`   | Swiss German         | Deutsch     |
-| 6  | 🇺🇸   |  `en`      | English              | English     |
-| 7  | 🇦🇺   |  `en-au`   | Australian English   | English     |
-| 8  | 🇨🇦   |  `en-ca`   | Canadian English     | English     |
-| 9  | 🇬🇧   |  `en-gb`   | British English      | English     |
-| 10 | 🇪🇸   |  `es`      | Spanish              | Español     |
-| 11 | 🇲🇽   |  `es-mx`   | Mexican Spanish      | Español     |
-| 12 | 🇮🇷   |  `fa`      | Farsi                |      فارسی  |
-| 13 | 🇫🇮   |  `fi`      | Finnish              | Suomi       |
-| 14 | 🇫🇷   |  `fr`      | French               | Français    |
-| 15 | 🇭🇺   |  `hu`      | Hungarian            | Magyar      |
-| 16 | 🇮🇸   |  `is`      | Icelandic            | Íslenska    |
-| 17 | 🇮🇹   |  `it`      | Italian              | Italiano    |
-| 18 | 🇯🇵   |  `ja`      | Japanese             | 日本語       |
-| 19 | 🇰🇷   |  `ko`      | Korean               | 한국어       |
-| 20 | 🇳🇱   |  `nl`      | Dutch                | Nederlands  |
-| 21 | 🇧🇪   |  `nl-be`   | Belgium Dutch        | Nederlands  |
-| 22 | 🇳🇴   |  `no`      | Norwegian            | Norsk       |
-| 23 | 🇵🇱   |  `pl`      | Polish               | Polski      |
-| 24 | 🇵🇹   |  `pt`      | Portuguese           | Português   |
-| 25 | 🇧🇷   |  `pt-br`   | Brazilian Portuguese | Português Brasileiro |
-| 26 | 🇷🇺   |  `ru`      | Russian              | Русский     |
-| 27 | 🇸🇪   |  `sv`      | Swedish              | Svenska     |
-| 28 | 🇹🇷   |  `tr`      | Turkish              | Türkçe      |
-| 29 | 🇺🇦   |  `uk`      | Ukrainian            | Український |
-| 30 | 🇨🇳   |  `zh`      | Chinese              | 汉语         |
+| 6  | 🇬🇷   |  `el`      | Greek                | Ελληνικά    |
+| 7  | 🇺🇸   |  `en`      | English              | English     |
+| 8  | 🇦🇺   |  `en-au`   | Australian English   | English     |
+| 9  | 🇨🇦   |  `en-ca`   | Canadian English     | English     |
+| 10 | 🇬🇧   |  `en-gb`   | British English      | English     |
+| 11 | 🇪🇸   |  `es`      | Spanish              | Español     |
+| 12 | 🇲🇽   |  `es-mx`   | Mexican Spanish      | Español     |
+| 13 | 🇪🇪   |  `et`      | Estonian             | Eesti       |
+| 14 | 🇮🇷   |  `fa`      | Farsi                | فارسی       |
+| 15 | 🇫🇮   |  `fi`      | Finnish              | Suomi       |
+| 16 | 🇫🇷   |  `fr`      | French               | Français    |
+| 17 | 🇭🇺   |  `hu`      | Hungarian            | Magyar      |
+| 18 | 🇮🇸   |  `is`      | Icelandic            | Íslenska    |
+| 19 | 🇮🇹   |  `it`      | Italian              | Italiano    |
+| 20 | 🇯🇵   |  `ja`      | Japanese             | 日本語       |
+| 21 | 🇰🇿   |  `kk`      | Kazakh               | Қазақша     |
+| 22 | 🇰🇷   |  `ko`      | Korean               | 한국어       |
+| 23 | 🇳🇱   |  `nl`      | Dutch                | Nederlands  |
+| 24 | 🇧🇪   |  `nl-be`   | Belgium Dutch        | Nederlands  |
+| 25 | 🇳🇴   |  `no`      | Norwegian            | Norsk       |
+| 26 | 🇵🇱   |  `pl`      | Polish               | Polski      |
+| 27 | 🇵🇹   |  `pt`      | Portuguese           | Português   |
+| 28 | 🇧🇷   |  `pt-br`   | Brazilian Portuguese | Português Brasileiro |
+| 29 | 🇷🇺   |  `ru`      | Russian              | Русский     |
+| 30 | 🇸🇪   |  `sv`      | Swedish              | Svenska     |
+| 31 | 🇹🇷   |  `tr`      | Turkish              | Türkçe      |
+| 32 | 🇺🇦   |  `uk`      | Ukrainian            | Український |
+| 33 | 🇨🇳   |  `zh`      | Chinese              | 汉语         |
 
 <!-- tocstop -->
 </details>
 
-Using locales:
-
-```python
->>> import mimesis
-
->>> en = mimesis.Personal('en')
->>> de = mimesis.Personal('de')
->>> ic = mimesis.Personal('is')
-
->>> en.full_name()
-'Carolin Brady'
-
->>> de.full_name()
-'Sabrina Gutermuth'
-
->>> ic.full_name()
-'Rósa Þórlindsdóttir'
-```
+<br>
 
 When you only need to generate data for a single locale, use the `Generic()` provider, and you can access all providers of Mimesis from one object.
 
 ```python
->>> from mimesis import Generic
->>> g = Generic('es')
+>>> import mimesis
+>>> g = mimesis.Generic('es')
 
 >>> g.datetime.month()
 'Agosto'
-
->>> g.code.imei()
-'353918052107063'
 
 >>> g.food.fruit()
 'Limón'
 ```
 
-Keep in mind that the library supports more than twenty data providers and it's means that you can generate data for almost anything you want (really):
-```python
->>> from mimesis import UnitSystem
+## Data providers
+Mimesis support over twenty different data providers available, which can produce data related to food, people, computer hardware, transportation, addresses, and more. See details for more information.
 
->>> us = UnitSystem()
+<details>
+<!-- toc -->
 
->>> '23 %s%s' % (us.prefix(), us.magnetic_flux())
-'23 exaweber'
+| №   | Provider        | Description                                                    |
+|---  | ------------- |:-------------                                                    |
+| 1   | Address         | *Address data (street name, street suffix etc.)*               |
+| 2   | Business        | *Business data (company, company_type, copyright etc.)*        |
+| 3   | Code            | *Codes (ISBN, EAN, IMEI etc.).*                                |
+| 4   | ClothingSizes   | *Clothing sizes (international sizes, european etc.)*          |
+| 5   | Datetime        | *Datetime (day_of_week, month, year etc.)*                     |
+| 6   | Development     | *Data for developers (version, programming language etc.)*     |
+| 7   | File            | *File data (extension etc.)*                                   |
+| 8   | Food            | *Information on food (vegetables, fruits, measurements etc.)*  |
+| 9   | Games           | *Games data (game, score, pegi_rating etc.)*                   |
+| 10  | Personal        | *Personal data (name, surname, age, email etc.)*               |
+| 11  | Text            | *Text data (sentence, title etc.)*                             |
+| 12  | Transport       | *Dummy data about transport (truck model, car etc.)*           |
+| 13  | Science         | *Scientific data (scientist, math_formula etc.)*               |
+| 14  | Structured      | *Structured data (html, css etc.)*                             |
+| 15  | Internet        | *Internet data (facebook, twitter etc.)*                       |
+| 16  | Hardware        | *The data about the hardware (resolution, cpu, graphics etc.)* |
+| 17  | Numbers         | *Numerical data (floats, primes, digit etc.)*                  |
+| 18  | Path            | *Provides methods and property for generate paths.*            |
+| 19  | UnitSytem       | *Provides names of unit systems in international format*       |
+| 20  | Generic         | *All at once*                                                  |
+| 21  | Cryptographic   | *Cryptographic data*                                           |
 
->>> '678 %s%s' % (us.prefix(sign='negative'), us.radioactivity())
-'678 millibecquerel'
-```
-
-## Advantages
-
-Mimesis offers a number of advantages over other similar libraries, such as Faker:
-
-* Performance. Mimesis is significantly [faster](http://i.imgur.com/ZqkE1k2.png) than other similar libraries.
-* Completeness. Mimesis strives to provide many detailed providers that offer a variety of data generators.
-* Simplicity. Mimesis does not require any modules other than the Python standard library.
-
-See [here](https://gist.github.com/lk-geimfari/461ce92fd32379d7b73c9e12164a9154) for an example of how we compare
-performance with other libraries.
-
-## Integration with Web Application Frameworks
-
-You can use Mimesis during development and testing of applications built on a variety of frameworks. Here is an
-example of integration with a Flask application:
-
-```python
-class Patient(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    full_name = db.Column(db.String(100))
-    weight = db.Column(db.String(64))
-    height = db.Column(db.String(64))
-    blood_type = db.Column(db.String(64))
-
-    def __init__(self, **kwargs):
-        super(Patient, self).__init__(**kwargs)
-
-    @staticmethod
-    def bootstrap(count=500, locale='en', gender=None):
-        from mimesis import Personal
-
-        person = Personal(locale)
-
-        for _ in range(count):
-            patient = Patient(
-                full_name=person.full_name(gender=gender),
-                weight=person.weight(),
-                height=person.height(),
-                blood_type=person.blood_type(),
-            )
-
-            db.session.add(patient)
-            try:
-                db.session.commit()
-            except IntegrityError:
-                db.session.rollback()
-```
-
-Just run shell mode
-```
-(env) ➜ python3 manage.py shell
-```
-
-and do following:
-
-```python
->>> Patient().bootstrap(count=1000, locale='en', gender='female')
-```
+<!-- tocstop -->
+</details>
 
 ## Custom Providers
 You also can add custom provider to `Generic()`, using `add_provider()` method:
 
 ```python
->>> from mimesis import Generic
->>> generic = Generic('en')
+>>> import mimesis
+>>> generic = mimesis.Generic('en')
 
->>> class SomeProvider():
-...
+>>> class SomeProvider(object):
 ...     class Meta:
 ...         name = "some_provider"
 ...
-...     @staticmethod
-...     def one():
-...         return 1
+...     def hello(self):
+...         return "Hello!"
 
->>> class Another():
-...
-...     @staticmethod
-...     def bye():
+>>> class Another(object):
+...     def bye(self):
 ...         return "Bye!"
 
 >>> generic.add_provider(SomeProvider)
 >>> generic.add_provider(Another)
 
->>> generic.some_provider.one()
-1
+>>> generic.some_provider.hello()
+'Hello!'
 
 >>> generic.another.bye()
 'Bye!'
@@ -229,6 +205,9 @@ or multiple custom providers using method `add_providers()`:
 >>> generic.add_providers(SomeProvider, Another)
 ```
 
+Too lazy to search for data? No problem, we found them for you and collected them here: [mimesis-extra-data](https://github.com/mimesis-lab/mimesis-extra-data).
+
+
 ## Builtins specific data providers
 
 Some countries have data types specific to that country. For example social security numbers (SSN) in the United States of America (`en`), and cadastro de pessoas físicas (CPF) in Brazil (`pt-br`).
@@ -239,14 +218,88 @@ If you would like to use these country-specific providers, then you must import 
 >>> from mimesis.builtins import BrazilSpecProvider
 
 >>> generic = Generic('pt-br')
-
->>> class BrazilProvider(BrazilSpecProvider):
-...     class Meta:
-...         name = "brazil_provider"
-
->>> generic.add_provider(BrazilProvider)
+>>> generic.add_provider(BrazilSpecProvider)
 >>> generic.brazil_provider.cpf()
 '696.441.186-00'
+```
+
+## Integration with Web Application Frameworks
+
+You can use Mimesis during development and testing of applications built on a variety of frameworks. Here is an
+example of integration with a Flask application:
+
+```python
+class Patient(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    full_name = db.Column(db.String(100))
+    blood_type = db.Column(db.String(64))
+
+    def __init__(self, **kwargs):
+        super(Patient, self).__init__(**kwargs)
+
+    @staticmethod
+    def populate(count=500, locale=None):
+        import mimesis
+
+        person =  mimesis.Personal(locale=locale)
+
+        for _ in range(count):
+            patient = Patient(
+                full_name=person.full_name('female'),
+                blood_type=person.blood_type(),
+            )
+
+            db.session.add(patient)
+            try:
+                db.session.commit()
+            except IntegrityError:
+                db.session.rollback()
+```
+
+Just run shell mode and do following:
+
+```python
+>>> Patient().populate(count=1000, locale='en')
+```
+
+## Generate data by schema
+Mimesis support generating data by schema:
+
+```python
+>>> from mimesis.schema import Schema
+>>> schema = Schema('en')
+
+>>> schema.load(schema={
+...     "id": "cryptographic.uuid",
+...     "name": "text.word",
+...     "version": "development.version",
+...     "owner": {
+...         "email": "personal.email",
+...         "token": "cryptographic.token",
+...         "creator": "personal.full_name"
+...     }
+... }).create(iterations=2)
+
+>>> # or you can load data from json file:
+>>> schema.load(path='schema.json').create(iterations=2)
+```
+
+Result:
+
+```
+[
+  {
+    "id": "790cce21-5f75-2652-2ee2-f9d90a26c43d",
+    "name": "container",
+    "owner": {
+      "email": "anjelica8481@outlook.com",
+      "token": "0bf924125640c46aad2a860f40ec4b7f33a516c497957abd70375c548ed56978",
+      "creator": "Ileen Ellis"
+    },
+    "version": "4.11.6"
+  },
+  ...
+]
 ```
 
 
@@ -254,9 +307,9 @@ If you would like to use these country-specific providers, then you must import 
 If your locale belongs to the family of Cyrillic languages, but you need latinized locale-specific data, then you can use special decorator which help you romanize your data.
 At this moment it's works only for Russian and Ukrainian:
 ```python
->>> import mimesis.decorators
+>>> from mimesis.decorators import romanized
 
->>> @mimesis.decorators.romanized('ru')
+>>> @romanized('ru')
 ... def russian_name():
 ...     return 'Вероника Денисова'
 
