@@ -1,12 +1,6 @@
 title: Mimesis
 description: Python library, which helps generate mock data for various purposes. This data can be particularly useful during software development and testing.
 google_analytics: 
-
-footer-links:
-  email: likid.geimfari[at]gmail.com
-  github: lk-geimfari/mimesis
-  twitter: likid_geimfari
-
 show_downloads: true
 theme: jekyll-theme-minimal
 
