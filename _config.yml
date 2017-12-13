@@ -1,5 +1,5 @@
 title: Mimesis
-description: <p align="center"> <a href="https://github.com/lk-geimfari/mimesis"> <img src="https://raw.githubusercontent.com/lk-geimfari/mimesis/master/docs/_static/logo.png"> </a> </p><br>Python library, which helps generate mock data for various purposes. This data can be particularly useful during software development and testing.
+description: Python library, which helps generate mock data for various purposes. This data can be particularly useful during software development and testing.
 google_analytics: 
 show_downloads: true
 theme: jekyll-theme-minimal
