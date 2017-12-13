@@ -9,20 +9,11 @@
 
 <p align="center">
     <a href="https://github.com/lk-geimfari/mimesis">
-        <img src="/media/logo-nodescr.png">
+        <img src="https://raw.githubusercontent.com/lk-geimfari/mimesis/master/media/logo-large-nodescr.png">
     </a>
 </p>
 
 **Mimesis** is a fast and easy to use library for Python programming language, which helps generate mock data for a variety of purposes (see "[Data providers](#data-providers)") in a variety of languages (see "[Locales](#locales)"). This data can be particularly useful during software development and testing. For example, it could be used to populate a testing database for a web application with user information such as email addresses, usernames, first names, last names, etc. 
-
-Mimesis offers a number of advantages over other similar libraries, such as Faker:
-
-* Performance. Mimesis is significantly [faster](http://i.imgur.com/pCo6yPA.png) than other similar libraries.
-* Completeness. Mimesis strives to provide many detailed providers that offer a variety of data generators.
-* Simplicity. Mimesis does not require any modules other than the Python standard library.
-
-See [here](https://gist.github.com/lk-geimfari/461ce92fd32379d7b73c9e12164a9154) for an example of how we compare
-performance with other libraries.
 
 ## Documentation
 Mimesis is very simple to use, and the below examples should help you get started. Complete documentation for Mimesis is available on [Read the Docs](http://mimesis.readthedocs.io/).
@@ -87,51 +78,8 @@ You can specify a locale when creating providers and they will return data that 
 'Światosław Tomankiewicz'
 ```
 
-Mimesis currently includes support for 33 different locales. See details for more information.
+Mimesis currently includes support for [33 different locales](https://github.com/lk-geimfari/mimesis#locales).
 
-<details>
-<!-- toc -->
-
-| №  | Flag  | Code       | Name                 | Native name |
-|--- |---   |---       |---                 |---         |
-| 1  | 🇨🇿   |  `cs`      | Czech                | Česky       |
-| 2  | 🇩🇰   |  `da`      | Danish               | Dansk       |
-| 3  | 🇩🇪   |  `de`      | German               | Deutsch     |
-| 4  | 🇦🇹   |  `de-at`   | Austrian German      | Deutsch     |
-| 5  | 🇨🇭   |  `de-ch`   | Swiss German         | Deutsch     |
-| 6  | 🇬🇷   |  `el`      | Greek                | Ελληνικά    |
-| 7  | 🇺🇸   |  `en`      | English              | English     |
-| 8  | 🇦🇺   |  `en-au`   | Australian English   | English     |
-| 9  | 🇨🇦   |  `en-ca`   | Canadian English     | English     |
-| 10 | 🇬🇧   |  `en-gb`   | British English      | English     |
-| 11 | 🇪🇸   |  `es`      | Spanish              | Español     |
-| 12 | 🇲🇽   |  `es-mx`   | Mexican Spanish      | Español     |
-| 13 | 🇪🇪   |  `et`      | Estonian             | Eesti       |
-| 14 | 🇮🇷   |  `fa`      | Farsi                | فارسی       |
-| 15 | 🇫🇮   |  `fi`      | Finnish              | Suomi       |
-| 16 | 🇫🇷   |  `fr`      | French               | Français    |
-| 17 | 🇭🇺   |  `hu`      | Hungarian            | Magyar      |
-| 18 | 🇮🇸   |  `is`      | Icelandic            | Íslenska    |
-| 19 | 🇮🇹   |  `it`      | Italian              | Italiano    |
-| 20 | 🇯🇵   |  `ja`      | Japanese             | 日本語       |
-| 21 | 🇰🇿   |  `kk`      | Kazakh               | Қазақша     |
-| 22 | 🇰🇷   |  `ko`      | Korean               | 한국어       |
-| 23 | 🇳🇱   |  `nl`      | Dutch                | Nederlands  |
-| 24 | 🇧🇪   |  `nl-be`   | Belgium Dutch        | Nederlands  |
-| 25 | 🇳🇴   |  `no`      | Norwegian            | Norsk       |
-| 26 | 🇵🇱   |  `pl`      | Polish               | Polski      |
-| 27 | 🇵🇹   |  `pt`      | Portuguese           | Português   |
-| 28 | 🇧🇷   |  `pt-br`   | Brazilian Portuguese | Português Brasileiro |
-| 29 | 🇷🇺   |  `ru`      | Russian              | Русский     |
-| 30 | 🇸🇪   |  `sv`      | Swedish              | Svenska     |
-| 31 | 🇹🇷   |  `tr`      | Turkish              | Türkçe      |
-| 32 | 🇺🇦   |  `uk`      | Ukrainian            | Український |
-| 33 | 🇨🇳   |  `zh`      | Chinese              | 汉语         |
-
-<!-- tocstop -->
-</details>
-
-<br>
 
 ## Data providers
 
