@@ -35,9 +35,9 @@ Also you can install it manually:
 As we said above, this library is really easy to use. A simple usage example is given below:
 
 ```python
->>> from mimesis import Personal
+>>> from mimesis import Person
 >>> from mimesis.enums import Gender
->>> person = Personal('en')
+>>> person = Person('en')
 
 >>> person.full_name(gender=Gender.FEMALE)
 'Antonetta Garrison'
@@ -60,11 +60,11 @@ As we said above, this library is really easy to use. A simple usage example is 
 You can specify a locale when creating providers and they will return data that is appropriate for the language or country associated with that locale:
 
 ```python
->>> from mimesis import Personal
+>>> from mimesis import Person
 
->>> de = Personal('de')
->>> fr = Personal('fr')
->>> pl = Personal('pl')
+>>> de = Person('de')
+>>> fr = Person('fr')
+>>> pl = Person('pl')
 
 >>> de.full_name()
 'Sabrina Gutermuth'
@@ -96,7 +96,7 @@ Mimesis support over twenty different data providers available, which can produc
 | 9   | `Food(*args, **kwargs)`            | Information on food (vegetables, fruits, measurements etc.)  |
 | 10  | `Games(*args, **kwargs)`           | Games data (game, score, pegi_rating etc.)                   |
 | 11  | `Payment(*args, **kwargs)`         | Payment data (credit_card, credit_card_network etc.)         |
-| 12  | `Personal(*args, **kwargs)`        | Personal data (name, surname, age, email etc.)               |
+| 12  | `Person(*args, **kwargs)`          | Personal data (name, surname, age, email etc.)               |
 | 13  | `Text(*args, **kwargs)`            | Text data (sentence, title etc.)                             |
 | 14  | `Transport(*args, **kwargs)`       | Dummy data about transport (truck model, car etc.)           |
 | 15  | `Science(*args, **kwargs)`         | Scientific data (math_formula, rna, dna etc.)                |
